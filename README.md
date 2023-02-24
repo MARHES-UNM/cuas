@@ -11,13 +11,18 @@ A Gym Environment for Counter UAS
 conda install tensorflow-gpu
 
 
-to train for 5 hours:
-python train_test_cuas_multi_agent.py train --duration $(( 5*60*60 ))
+To train model: 
+```bash
+python run_experiment.py train --duration <time in seconds>
+```
 
-to test:
+
+To test model:
+```bash
+python run_experiment.py test --checkpoint <checkpoint>
 ```
-python train_test_cuas_multi_agentpy test --checkpoint <checkpoint>
-```
+
+
 
 https://github.com/sisl/MADRL
 https://github.com/ChanganVR/CADRL/blob/master/train.py

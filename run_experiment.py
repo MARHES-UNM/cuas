@@ -480,7 +480,6 @@ def train(args):
     args.config["env_config"]["beta"] = 0.0900
     args.config["env_config"]["use_safe_action"] = tune.grid_search([False, True])
 
-
     ppo_config = get_agent_config(args.config)
     ppo_config.update(
         {
@@ -534,29 +533,20 @@ def test(args):
             args.config["trial"] = tune.grid_search(
                 [trial for trial in args.config["analysis"].trials]
             )
-    elif args.checkpoint:
+    elif args.checkpoint is not None:
         args.config["checkpoint"] = args.checkpoint
         args.config["restore_checkpoint"] = True
     else:
         args.config["restore_checkpoint"] = False
-
 
     args.config["test_config"] = {
         "seed": tune.grid_search([5000, 0, 173, 93, 507, 1001])
         # "seed": 20
     }
 
-    args.config["restore_checkpoint"] = True
-    args.config["update_environment"] = True
+    # args.config["update_environment"] = True
     args.config["env_config"]["observation_type"] = "local"
-    args.config["test_env_config"] = {
-        "observation_radius": 20,
-        # "observation_radius": tune.grid_search([10, 20, 30, 40]),
-        "num_obstacles": tune.grid_search([2, 6, 10]),
-        "num_pursuers": tune.grid_search([2, 4, 10]),
-    }
-
-    args.config["train_config"]["model"]["custom_model"] = "LstmModel"
+    args.config["train_config"]["model"]["custom_model"] = "DeepsetModel"
 
     if args.tune_run:
         ray.init(num_cpus=args.cpu)

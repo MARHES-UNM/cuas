@@ -15,7 +15,6 @@ from cuas.agents.cuas_agents import (
     ObsType,
 )
 from cuas.envs.base_cuas_env import BaseCuasEnv
-from cuas.policy.velocity_obstacle import compute_velocity
 from cuas.safety_layer.safety_layer import SafetyLayer
 from gym import spaces
 from gym.error import DependencyNotInstalled

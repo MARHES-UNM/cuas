@@ -9,7 +9,6 @@ from gym import spaces
 from gym.utils import seeding
 from ray.rllib.env.multi_agent_env import MultiAgentEnv
 
-from cuas.policy.velocity_obstacle import compute_velocity
 
 path = pathlib.Path(os.path.abspath(os.path.dirname(__file__)))
 # RESOURCE_FOLDER = pathlib.Path("resources")
