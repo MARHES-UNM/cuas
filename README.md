@@ -1,10 +1,6 @@
 # Multi-Agent Counter UAS (CUAS) Using Reinforcement Learning
 
-## Single Agent Pursuer Evader
-![Single Agent Pursuer Evader](images/1v1_multiagent_ppo.gif)
-
-## Multi Agent Pursuer Evader
-![Multi Agent Purser Evader](images/4v1_multiagent_ppo.gif)
+![Multi Agent Purser Evader](images/cuas_deepset.gif)
 
 A Gym Environment for Counter UAS
 
