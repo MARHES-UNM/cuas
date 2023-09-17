@@ -540,8 +540,8 @@ def test(args):
         args.config["restore_checkpoint"] = False
 
     args.config["test_config"] = {
-        "seed": tune.grid_search([5000, 0, 173, 93, 507, 1001])
-        # "seed": 20
+        # "seed": tune.grid_search([5000, 0, 173, 93, 507, 1001])
+        "seed": 20
     }
 
     # args.config["update_environment"] = True
